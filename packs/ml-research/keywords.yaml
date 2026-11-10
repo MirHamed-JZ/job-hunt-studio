@@ -1,0 +1,64 @@
+# ml-research pack: what employers of machine learning engineers, applied scientists and research engineers ask for.
+# Used by score-job (market terms), find-jobs (a term scores only when the Ledger's evidence mentions it), the ATS
+# check (keyword coverage, information only) and the resume reviewer (role fit). A keyword is a term to look for, never a claim: the candidate's Ledger decides what may be written.
+
+titles:
+  - Machine Learning Engineer
+  - ML Engineer
+  - Applied Scientist
+  - Research Engineer
+  - Research Scientist
+  - Applied ML Scientist
+  - AI Engineer
+  - Data Scientist
+
+keywords:
+  - machine learning
+  - deep learning
+  - large language models
+  - LLM
+  - generative AI
+  - fine-tuning
+  - evaluation
+  - benchmark
+  - A/B testing
+  - statistics
+  - natural language processing
+  - computer vision
+  - recommendation
+  - ranking
+  - retrieval
+  - RAG
+  - inference
+  - quantization
+  - distributed training
+  - MLOps
+  - feature engineering
+  - data pipelines
+  - Python
+  - PyTorch
+  - TensorFlow
+  - JAX
+  - scikit-learn
+  - Hugging Face
+  - SQL
+  - Spark
+  - Docker
+  - Kubernetes
+  - AWS
+  - GCP
+  - CUDA
+
+buzzwords_to_avoid:
+  - AI-powered
+  - game-changing
+  - revolutionary
+  - next-generation
+  - groundbreaking
+
+rubric_emphasis:
+  - Machine learning work shown end to end, from data to evaluated model to handoff or production, with the status said exactly.
+  - Evaluation rigor: baselines, test sets, metrics that a hiring manager recognizes.
+  - Generative AI or LLM work when the candidate has it; never implied when they do not.
+  - Real data and real constraints (scale, latency, cost, privacy).
+  - Publications shown as a strength for research roles, without crowding out experience.

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(/applications/**)",
+      "Edit(/interview/**)",
+      "Edit(/linkedin/**)"
+    ],
+    "ask": [
+      "Edit(/docs/**)",
+      "Edit(/CLAUDE.md)",
+      "Edit(/jhs.yaml)",
+      "Bash(git rm *)"
+    ],
+    "deny": [
+      "Bash(rm *)",
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(git remote add *)",
+      "Edit(/resumes/approved/**)",
+      "Edit(/resumes/current/**)"
+    ]
+  }
+}

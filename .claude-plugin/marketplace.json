@@ -1,0 +1,17 @@
+{
+  "name": "job-hunt-studio",
+  "owner": {
+    "name": "Hamed Jafarzadeh Asl",
+    "url": "https://github.com/MirHamed-JZ"
+  },
+  "description": "Job Hunt Studio, an evidence-first job search plugin for Claude Code.",
+  "plugins": [
+    {
+      "name": "job-hunt-studio",
+      "source": "./",
+      "description": "Evidence-first job search: fact ledger, scoring, tailored LaTeX resumes with a review gate and tracking, job search, outreach, interview practice and LinkedIn text. You send everything.",
+      "category": "productivity",
+      "keywords": ["job-search", "resume", "interview", "career"]
+    }
+  ]
+}

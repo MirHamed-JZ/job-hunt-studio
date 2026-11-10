@@ -1,0 +1,164 @@
+% JHS-EXAMPLE-CONTENT: this file holds the fictional example candidate. Replace every fact with facts from your Ledger (/job-hunt-studio:tailor-resume base does it), then delete this line. The checks refuse to approve a resume that still has it.
+%
+% Job Hunt Studio resume template "jakes": the look of Jake's Resume, one column, small-caps section headings.
+% Adapted from Jake's Resume (https://github.com/jakegut/resume), MIT License, Copyright (c) 2020 Jake Gutierrez
+% (full notice in LICENSE next to this file), which is based on https://github.com/sb2nov/resume.
+% Changes: the entry lines use a filler that keeps each date in reading order for text extractors (the original
+% right-aligned table columns make pdfminer read some dates out of order); the pdfTeX-only lines are guarded so the
+% file also compiles with LuaLaTeX (used for change-tracked diff PDFs).
+%
+% Resume entries the checks compare with Ledger [roles] (do not delete these lines):
+% jhs-entry[Experience]: \resumeSubheading{title}{dates}{organization}{location}
+% jhs-entry[Education]: \resumeSubheading{organization}{location}{title}{dates}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks,pdftitle={Alex Rivera - Resume},pdfauthor={Alex Rivera}]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Fills the gap before a right-aligned date with invisible "fake space" glyphs (pdfTeX), so text extractors keep
+% the left text and the date in one line, in reading order. LuaLaTeX falls back to a plain \hfill.
+\ifdefined\pdffakespace
+    \newcommand{\datefill}{\leaders\hbox to 0.4em{\hss\pdffakespace\hss}\hfill}
+\else
+    \newcommand{\datefill}{\hfill}
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% \ifhmode\unskip\fi drops the space left by the line break after the previous entry, which would otherwise
+% push that entry's date left of the margin; the % at line ends add no spaces of their own.
+\newcommand{\resumeSubheading}[4]{%
+  \ifhmode\unskip\fi\vspace{-2pt}\item
+    \textbf{#1}\datefill #2\\
+    \textit{\small#3}\datefill\textit{\small #4}\vspace{-3pt}%
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+    \ifhmode\unskip\fi\item
+    \small#1\datefill #2\vspace{-3pt}%
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+% 7pt (the original has -5pt) keeps the original's space between jobs, which came from a stray space that also
+% pushed some dates left of the margin; that space is now removed in \resumeSubheading.
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{7pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Alex Rivera} \\ \vspace{2pt}
+    Machine Learning Engineer \\ \vspace{1pt}
+    \small Lyon, France $|$ \href{mailto:alex.rivera@example.com}{\underline{alex.rivera@example.com}} $|$
+    \href{https://www.linkedin.com/in/example-alex-rivera}{\underline{linkedin.com/in/example-alex-rivera}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{ML engineer with 4 years building and evaluating ranking models for e-commerce search. Designed a learning-to-rank model that improved NDCG@10 by 3.1\% in offline replay, and cut a nightly feature pipeline from 6 hours to 1.5 hours.}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Machine Learning Engineer}{Sep 2022 -- Present}
+      {Brightfield Commerce}{Lyon, France}
+      \resumeItemListStart
+        \resumeItem{Improved ranking quality (NDCG@10) by 3.1\% over the production scorer in a 30-day offline replay of 2.4M search sessions; designed the features and evaluation and trained the learning-to-rank model (LightGBM LambdaMART).}
+        \resumeItem{Cut the nightly ranking-feature pipeline from 6 hours to 1.5 hours by rewriting it from pandas scripts in PySpark, with validation tests; in production since Jun 2023.}
+        \resumeItem{Built the offline evaluation harness and weekly metrics report for the 2023 search revamp (40 weekly comparisons).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Data Science Intern}{Feb 2022 -- Aug 2022}
+      {Brightfield Commerce}{Lyon, France}
+      \resumeItemListStart
+        \resumeItem{Outperformed the keyword rules at mapping search queries to product categories (87\% versus 71\% top-1 accuracy on 2,000 held-out queries) with a TF-IDF and logistic regression classifier.}
+        \resumeItem{Labeled 12,000 search queries with the merchandising team and wrote the evaluation and handoff report.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Halden Institute of Technology}{Halden, Norway}
+      {MSc, Data Science}{Aug 2020 -- Jun 2022}
+    \resumeSubheading
+      {Universidad de Valcastro}{Valcastro, Spain}
+      {BSc, Mathematics}{Oct 2016 -- Jun 2020}
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{\href{https://example.org/paper-rivera-2025}{Contrastive Pretraining for Sparse Product Catalogs}} $|$ \emph{Workshop on Retrieval for Commerce (fictional)}}{2025}
+    \item \small{\textbf{Alex Rivera}, Ingrid Solvang. Accepted.}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, SQL} \\
+     \textbf{ML and Data}{: learning to rank (LTR), offline evaluation, PyTorch, PySpark}
+    }}
+ \end{itemize}
+
+\end{document}

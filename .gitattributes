@@ -1,0 +1,6 @@
+# Line endings: every text file is stored and checked out with LF, on Windows too. Git Bash cannot run a shell
+# script with CRLF line endings (hooks/run_guard.sh), and the tools edit files byte for byte.
+* text=auto eol=lf
+*.sh text eol=lf
+*.png binary
+*.pdf binary

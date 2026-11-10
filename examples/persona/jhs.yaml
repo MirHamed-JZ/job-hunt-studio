@@ -1,0 +1,76 @@
+# Fictional example (Alex Rivera). Every name, link and setting is invented.
+version: 1
+
+setup:
+  done: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+candidate:
+  name: "Alex Rivera"
+  email: "alex.rivera@example.com"
+  phone: ""
+  city: "Lyon, France"
+  linkedin: "https://www.linkedin.com/in/example-alex-rivera"
+  github: ""               # left empty: an invented handle could belong to a real account
+  website: ""
+  schools: ["Halden Institute of Technology", "Universidad de Valcastro"]
+  past_employers: ["Brightfield Commerce"]
+  work_authorization: "EU citizen"
+
+target:
+  titles: ["Machine Learning Engineer", "Applied Scientist", "ML Engineer, Ranking", "Search Engineer"]
+  exclude_titles: ["Manager", "Director", "Intern", "Principal"]
+  seniority:
+    levels: [mid, senior]
+    max_years_required: 5
+
+pack: ml-research
+
+search:
+  tiers:
+    - name: "1 Lyon"
+      location_regex: "lyon|villeurbanne"
+      remote_ok: false
+    - name: "2 remote France or EU"
+      location_regex: ""
+      remote_ok: true
+      remote_regions: ["France", "EU", "Europe"]
+    - name: "3 Paris"
+      location_regex: "paris"
+      remote_ok: false
+  watchlist: []            # filled with /job-hunt-studio:find-jobs add <company>
+  max_age_days: 30
+  min_score: 3
+  extra_keywords: {}
+  jobspy:
+    enabled: false
+    sites: []
+    searches: []
+    queries: []
+    results_per_search: 20
+    hours_old: 336
+
+resume:
+  template: "jakes"
+  base_tex: resumes/base/Resume.tex
+  output_name: "Alex_Rivera_Resume.pdf"
+  pages: 1
+  tag_prefix: resume-approved-v
+
+review:
+  ready_threshold: 85
+
+writing:
+  humanizer: false
+  banned_punctuation: [em-dash, en-dash, double-hyphen]
+  banned_phrases: []
+
+applications:
+  followup_days: 7
+
+outreach:
+  default_location: "Lyon"
+  connections_csv: applications/outreach/private/Connections.csv
+  connections: unset       # outreach asks once on its first run
+  topics: []               # set by outreach setup from the Ledger
+  search_roles: []
+  aliases: {}

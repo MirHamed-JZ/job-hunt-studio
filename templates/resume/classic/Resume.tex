@@ -1,0 +1,168 @@
+% JHS-EXAMPLE-CONTENT: this file holds the fictional example candidate. Replace every fact with facts from your Ledger (/job-hunt-studio:tailor-resume base does it), then delete this line. The checks refuse to approve a resume that still has it.
+%
+% Job Hunt Studio resume template "classic": one column, Charter 10 pt, one accent colour, dates at the right margin.
+% Layout adapted from the "engineeringresumes" LaTeX theme of RenderCV v1.18 (https://github.com/rendercv/rendercv),
+% MIT License, Copyright (c) 2023 to present Sina Atalay and individual contributors (full notice in LICENSE next
+% to this file). Changes: a \jobline entry line that keeps each date in reading order for text extractors, an
+% accent colour, and a header separator macro.
+%
+% Resume entries the checks compare with Ledger [roles] (do not delete these lines):
+% jhs-entry: \jobline{title}{organization}{dates}
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot,
+    top=1.2 cm,
+    bottom=1.2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{primaryColor}{RGB}{0, 51, 102}
+\usepackage{enumitem}
+\usepackage[
+    pdftitle={Alex Rivera - Resume},
+    pdfauthor={Alex Rivera},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage{calc}
+\usepackage{changepage}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Make the PDF text machine readable (ATS parsable): pdfTeX maps every glyph to Unicode.
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+\usepackage[final]{microtype}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large\color{primaryColor}}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.15 cm}
+
+\renewcommand\labelitemi{\textbullet}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.07 cm,
+        parsep=0.075 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+% Space around the separators in the header (a macro, so latexdiff can compare two versions).
+\newcommand{\HSEP}{\kern 5.0 pt}
+
+% Entry line: role (bold, accent), organization (italic), and the dates at the right margin, all in one text line.
+% The gap before the dates is filled with invisible "fake space" glyphs (\pdffakespace), so text extractors such
+% as pdfminer keep the title and its dates together in reading order (a plain \hfill gap made pdfminer read some
+% dates before their titles). \mbox keeps a date range from wrapping. \pdffakespace exists only in pdfTeX (the
+% real build); LuaLaTeX (used for change-tracked diff PDFs) falls back to \hfill.
+\ifdefined\pdffakespace
+    \newcommand{\datefill}{\leaders\hbox to 0.4em{\hss\pdffakespace\hss}\hfill}
+\else
+    \newcommand{\datefill}{\hfill}
+\fi
+\newcommand{\jobline}[3]{%
+    \vspace{3pt}
+    \begin{onecolentry}
+    \noindent{\color{primaryColor}\textbf{#1}}, \textit{#2}\datefill\mbox{#3}
+    \end{onecolentry}
+}
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+    \begin{header}
+        {\fontsize{25 pt}{25 pt}\selectfont \color{primaryColor}\textbf{Alex Rivera}}
+
+        {\large Machine Learning Engineer}
+
+        \normalsize
+        \mbox{Lyon, France}%
+        \HSEP\AND\HSEP
+        \mbox{\href{mailto:alex.rivera@example.com}{alex.rivera@example.com}}%
+        \HSEP\AND\HSEP
+        \mbox{\href{https://www.linkedin.com/in/example-alex-rivera}{linkedin.com/in/example-alex-rivera}}%
+    \end{header}
+
+\section{Summary}
+\begin{onecolentry}
+ML engineer with 4 years building and evaluating ranking models for e-commerce search. Designed a learning-to-rank model that improved NDCG@10 by 3.1\% in offline replay, and cut a nightly feature pipeline from 6 hours to 1.5 hours.
+\end{onecolentry}
+
+\section{Experience}
+
+\jobline{Machine Learning Engineer}{Brightfield Commerce, Lyon, France}{Sep 2022 -- Present}
+\begin{onecolentry}
+\begin{highlights}
+    \item Improved ranking quality (NDCG@10) by 3.1\% over the production scorer in a 30-day offline replay of 2.4M search sessions; designed the features and evaluation and trained the learning-to-rank model (LightGBM LambdaMART).
+    \item Cut the nightly ranking-feature pipeline from 6 hours to 1.5 hours by rewriting it from pandas scripts in PySpark, with validation tests; in production since Jun 2023.
+    \item Built the offline evaluation harness and weekly metrics report for the 2023 search revamp (40 weekly comparisons).
+\end{highlights}
+\end{onecolentry}
+
+\vspace{1.6mm}
+
+\jobline{Data Science Intern}{Brightfield Commerce, Lyon, France}{Feb 2022 -- Aug 2022}
+\begin{onecolentry}
+\begin{highlights}
+    \item Outperformed the keyword rules at mapping search queries to product categories (87\% versus 71\% top-1 accuracy on 2,000 held-out queries) with a TF-IDF and logistic regression classifier.
+    \item Labeled 12,000 search queries with the merchandising team and wrote the evaluation and handoff report.
+\end{highlights}
+\end{onecolentry}
+
+\section{Education}
+
+\jobline{MSc, Data Science}{Halden Institute of Technology, Halden, Norway}{Aug 2020 -- Jun 2022}
+\vspace{4pt}
+\jobline{BSc, Mathematics}{Universidad de Valcastro, Valcastro, Spain}{Oct 2016 -- Jun 2020}
+
+\section{Publications}
+\begin{onecolentry}
+\textbf{Alex Rivera}, Ingrid Solvang. ``\href{https://example.org/paper-rivera-2025}{Contrastive Pretraining for Sparse Product Catalogs}.'' \textit{Workshop on Retrieval for Commerce (fictional)}, 2025, accepted.
+\end{onecolentry}
+
+\section{Skills}
+\begin{onecolentry}
+\textbf{Languages:} Python, SQL
+\end{onecolentry}
+\vspace{0.1 cm}
+\begin{onecolentry}
+\textbf{ML and Data:} learning to rank (LTR), offline evaluation, PyTorch, PySpark
+\end{onecolentry}
+
+\end{document}

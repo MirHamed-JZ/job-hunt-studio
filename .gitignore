@@ -1,0 +1,17 @@
+# Never commit a real person's data to this repository.
+# A user's workspace (created by /setup) lives in its own private folder, not here.
+.venv/
+__pycache__/
+*.pyc
+build/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+.DS_Store
+.claude/settings.local.json
+CLAUDE.local.md
+*.stackdump
+evals/results/

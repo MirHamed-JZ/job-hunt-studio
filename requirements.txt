@@ -1,0 +1,7 @@
+# Python packages for the Job Hunt Studio checks, installed by /setup into the workspace .venv.
+pypdf>=5.1
+pdfminer.six>=20240706
+pillow>=10.0
+pyyaml>=6.0
+# Optional, only if chosen at setup (LinkedIn and Indeed search; LinkedIn's terms forbid scraping):
+# python-jobspy

@@ -1,0 +1,2322 @@
+[
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py score-job"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py apply-job"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py tailor-base"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py tailor-resume"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py audit-claims"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py find-jobs"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py interview-drill"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py linkedin-refresh"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py mock-interview"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py outreach"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py update-ledger"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py compile-resume --tex resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py review-resume --tex applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/preflight.py review-resume --tex resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/build_resume.py resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/build_resume.py applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+"cd {WSB} && .venv/Scripts/python {PLUGINB}/tools/build_resume.py resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/ats_check.py resumes/base/build/Resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/ats_check.py resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/ats_check.py resumes/approved/v1_2026-11-10/Alex_Rivera_Resume_v1.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/resume_lint.py resumes/base/Resume.tex resumes/base/build/Resume.pdf --links"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/resume_lint.py resumes/approved/v1_2026-11-10/Resume_v1.tex resumes/current/Alex_Rivera_Resume.pdf --links"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/fact_check.py resumes/approved/v1_2026-11-10/Resume_v1.tex --kind resume --pdf resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/fact_check.py applications/Fernwick_MLEngineerRanking_2026-11-10/cover_letter.md --kind cover-letter"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/visual_check.py resumes/base/build/visual resumes/base/build/Resume.pdf {PLUGIN}/tools/assets/reference_jakes_resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/visual_check.py applications/Fernwick_MLEngineerRanking_2026-11-10/build/visual applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf {PLUGIN}/tools/assets/reference_jakes_resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/visual_check.py applications/Fernwick_MLEngineerRanking_2026-11-10/build/visual applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/visual_check.py resumes/base/build/visual resumes/current/Alex_Rivera_Resume.pdf {PLUGIN}/tools/assets/reference_jakes_resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/resume_diff.py applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex --copy-to applications/Fernwick_MLEngineerRanking_2026-11-10/diff_vs_v1.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/resume_diff.py applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex --rev resume-approved-v1 --old-path resumes/base/Resume.tex --copy-to applications/Fernwick_MLEngineerRanking_2026-11-10/diff_vs_v1.tex"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/resume_diff.py resumes/base/Resume.tex --rev resume-approved-v1"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/approve_resume.py \"Ranking bullet reworded; summary shortened\" \"88/100 READY\""
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/approve_resume.py \"v2: new PDF replaces resumes/current/Alex_Rivera_Resume.pdf\" \"90/100 READY\""
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/posting_guard.py --url \"https://boards.greenhouse.io/acme/jobs/123\" --out applications/Fernwick_MLEngineerRanking_2026-11-10/posting.md"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/posting_guard.py --text applications/Fernwick_MLEngineerRanking_2026-11-10/posting_raw.txt --out applications/Fernwick_MLEngineerRanking_2026-11-10/posting.md --source-url \"https://fernwick.example.com/jobs/123\""
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/posting_guard.py --text interview/notes/fernwick_raw.txt --out interview/notes/fernwick_posting.md"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/ledger.py check docs/Evidence_Ledger.md"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/practice.py plan"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/find_jobs.py --sources boards --tiers 1,2"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/find_jobs.py --probe Fernwick --slug fernwick,fernwicklabs"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/tools/find_people.py Fernwick --sources research,github"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python {PLUGIN}/skills/setup/scripts/check_env.py"
+],
+[
+"allow",
+"Bash",
+"latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build Resume.tex"
+],
+[
+"allow",
+"Bash",
+"cd resumes/base && latexmk -pdf -outdir=build Resume.tex"
+],
+[
+"allow",
+"Bash",
+"latexmk -pdf -outdir=applications/Fernwick_MLEngineerRanking_2026-11-10/build applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+"git tag -l \"resume-approved-v*\" --sort=-v:refname"
+],
+[
+"allow",
+"Bash",
+"git tag -l \"resume-approved-v*\" --sort=-v:refname | head -1"
+],
+[
+"allow",
+"Bash",
+"git tag --list 'resume-approved-v*' --sort=-v:refname --format='%(refname:short) %(creatordate:short)'"
+],
+[
+"allow",
+"Bash",
+"git tag"
+],
+[
+"allow",
+"Bash",
+"git tag -n1 -l 'resume-approved-v*'"
+],
+[
+"allow",
+"Bash",
+"git tag -n1 resume-approved-v1"
+],
+[
+"allow",
+"Bash",
+"git tag --sort=-v:refname"
+],
+[
+"allow",
+"Bash",
+"git show resume-approved-v1:resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git show resume-approved-v1:resumes/base/Resume.tex > applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+"TAG=$(git tag -l \"resume-approved-v*\" --sort=-v:refname | head -1); git show \"$TAG:resumes/base/Resume.tex\" > applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+"git show resume-approved-v1 --stat"
+],
+[
+"allow",
+"Bash",
+"git show resume-approved-v1:resumes/current/Alex_Rivera_Resume.pdf > /tmp/approved.pdf"
+],
+[
+"allow",
+"Bash",
+"git diff resume-approved-v1 -- resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git diff --quiet resume-approved-v1 HEAD -- resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git diff --stat resume-approved-v1..HEAD"
+],
+[
+"allow",
+"Bash",
+"git log --oneline -5 resume-approved-v1"
+],
+[
+"allow",
+"Bash",
+"git rev-parse resume-approved-v1"
+],
+[
+"allow",
+"Bash",
+"git rev-parse -q --verify refs/tags/resume-approved-v1"
+],
+[
+"allow",
+"Bash",
+"git for-each-ref refs/tags/resume-approved-v* --format='%(refname:short)'"
+],
+[
+"allow",
+"Bash",
+"git describe --tags --match 'resume-approved-v*' --abbrev=0"
+],
+[
+"allow",
+"Bash",
+"git ls-files resumes/approved resumes/current"
+],
+[
+"allow",
+"Bash",
+"git ls-tree -r --name-only resume-approved-v1 resumes/"
+],
+[
+"allow",
+"Bash",
+"git status --short"
+],
+[
+"allow",
+"Bash",
+"git status --porcelain -- resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git status --short resumes/current resumes/approved"
+],
+[
+"allow",
+"Bash",
+"git log --oneline -- resumes/current"
+],
+[
+"allow",
+"Bash",
+"git diff --stat HEAD -- resumes/approved resumes/current"
+],
+[
+"allow",
+"Bash",
+"git add resumes/base/Resume.tex docs/Resume_Notes.md jhs.yaml"
+],
+[
+"allow",
+"Bash",
+"git commit -m \"Base resume draft\""
+],
+[
+"allow",
+"Bash",
+"git commit -m \"Resume v2 source\""
+],
+[
+"allow",
+"Bash",
+"git add applications/"
+],
+[
+"allow",
+"Bash",
+"git commit -m \"Apply: Fernwick MLEngineerRanking (resume-approved-v1)\""
+],
+[
+"allow",
+"Bash",
+"git add -A"
+],
+[
+"allow",
+"Bash",
+"git add jhs.yaml"
+],
+[
+"allow",
+"Bash",
+"git commit -m \"Watchlist: add Fernwick\""
+],
+[
+"allow",
+"Bash",
+"git add interview applications && git commit -m \"Mock interview: cv Fernwick\""
+],
+[
+"allow",
+"Bash",
+"git add linkedin && git commit -m \"LinkedIn: draft 2026-11-10\""
+],
+[
+"allow",
+"Bash",
+"git commit -m \"$(cat <<'EOF'\nApply: Fernwick (resume-approved-v1)\n\nPDF sent: resumes/current/Alex_Rivera_Resume.pdf, never git push.\nrm resumes/current/x\nEOF\n)\""
+],
+[
+"allow",
+"Bash",
+"git commit -m \"Archive note: resumes/current/Alex_Rivera_Resume.pdf is v1; do not git push\""
+],
+[
+"allow",
+"Bash",
+"git rev-parse --show-toplevel"
+],
+[
+"allow",
+"Bash",
+"git remote -v"
+],
+[
+"allow",
+"Bash",
+"git init"
+],
+[
+"allow",
+"Bash",
+"git config user.name \"Alex Rivera (fictional)\""
+],
+[
+"allow",
+"Bash",
+"git config user.name"
+],
+[
+"allow",
+"Bash",
+"git stash list"
+],
+[
+"allow",
+"Bash",
+"git checkout resume-approved-v1 -- resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git tag -d scratch-test"
+],
+[
+"allow",
+"Bash",
+"git tag scratch-test"
+],
+[
+"allow",
+"Bash",
+"pdftotext -layout -enc UTF-8 resumes/current/Alex_Rivera_Resume.pdf -"
+],
+[
+"allow",
+"Bash",
+"pdftotext -layout resumes/current/Alex_Rivera_Resume.pdf - | head -40"
+],
+[
+"allow",
+"Bash",
+"pdftotext -layout resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/approved.txt"
+],
+[
+"allow",
+"Bash",
+"pdftotext -layout -enc UTF-8 resumes/approved/v1_2026-11-10/Alex_Rivera_Resume_v1.pdf - | grep -c Fernwick"
+],
+[
+"allow",
+"Bash",
+"pdftotext resumes/current/Alex_Rivera_Resume.pdf - | wc -w"
+],
+[
+"allow",
+"Bash",
+"pdfinfo resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"pdfinfo resumes/current/Alex_Rivera_Resume.pdf | grep Pages"
+],
+[
+"allow",
+"Bash",
+"pdffonts resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"pdftoppm -r 70 -png -singlefile resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/approved"
+],
+[
+"allow",
+"Bash",
+"pdftoppm -r 70 -png -singlefile resumes/current/Alex_Rivera_Resume.pdf resumes/base/build/approved_v1"
+],
+[
+"allow",
+"Bash",
+"pdftoppm -png -r 100 resumes/approved/v1_2026-11-10/Alex_Rivera_Resume_v1.pdf /tmp/v1"
+],
+[
+"allow",
+"Bash",
+"diff <(pdftotext -layout resumes/current/Alex_Rivera_Resume.pdf -) <(pdftotext -layout applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf -)"
+],
+[
+"allow",
+"Bash",
+"cmp resumes/current/Alex_Rivera_Resume.pdf resumes/approved/v1_2026-11-10/Alex_Rivera_Resume_v1.pdf"
+],
+[
+"allow",
+"Bash",
+"cmp resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf && echo identical"
+],
+[
+"allow",
+"Bash",
+"diff resumes/approved/v1_2026-11-10/Resume_v1.tex resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"diff -u resumes/approved/v1_2026-11-10/Resume_v1.tex applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex | head -60"
+],
+[
+"allow",
+"Bash",
+"sha256sum resumes/current/Alex_Rivera_Resume.pdf resumes/approved/v1_2026-11-10/Alex_Rivera_Resume_v1.pdf"
+],
+[
+"allow",
+"Bash",
+"ls -la resumes/current resumes/approved"
+],
+[
+"allow",
+"Bash",
+"ls resumes/approved/*/"
+],
+[
+"allow",
+"Bash",
+"ls -la resumes/current/"
+],
+[
+"allow",
+"Bash",
+"find resumes -type f | sort"
+],
+[
+"allow",
+"Bash",
+"find resumes/approved -name '*.pdf'"
+],
+[
+"allow",
+"Bash",
+"cat resumes/approved/v1_2026-11-10/NOTES.md"
+],
+[
+"allow",
+"Bash",
+"cat resumes/current/README.md"
+],
+[
+"allow",
+"Bash",
+"head -30 resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"allow",
+"Bash",
+"grep -n 'Fernwick' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"allow",
+"Bash",
+"grep -c . resumes/approved/v1_2026-11-10/Resume_v1.tex resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"wc -c resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"stat resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"test -f resumes/current/Alex_Rivera_Resume.pdf && echo exists"
+],
+[
+"allow",
+"Bash",
+"[ -f resumes/current/Alex_Rivera_Resume.pdf ] && echo exists"
+],
+[
+"allow",
+"Bash",
+"if [ -f resumes/current/Alex_Rivera_Resume.pdf ]; then echo yes; fi"
+],
+[
+"allow",
+"Bash",
+"file resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"du -h resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"realpath resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"cygpath -w resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"echo \"PDF to send: {WSB}/resumes/current/Alex_Rivera_Resume.pdf\""
+],
+[
+"allow",
+"Bash",
+"cp resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"mkdir -p applications/Fernwick_MLEngineerRanking_2026-11-10/build && cp resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/"
+],
+[
+"allow",
+"Bash",
+"cp resumes/approved/v1_2026-11-10/Resume_v1.tex applications/Fernwick_MLEngineerRanking_2026-11-10/Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Bash",
+"cp resumes/current/Alex_Rivera_Resume.pdf ~/Desktop/"
+],
+[
+"allow",
+"Bash",
+"cp -t applications/Fernwick_MLEngineerRanking_2026-11-10/build resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"cp {WSB}/resumes/current/Alex_Rivera_Resume.pdf {WSB}/applications/Fernwick_MLEngineerRanking_2026-11-10/build/"
+],
+[
+"allow",
+"Bash",
+"cp \"{WS}/resumes/current/Alex_Rivera_Resume.pdf\" \"{WS}/applications/Fernwick_MLEngineerRanking_2026-11-10/build/Alex_Rivera_Resume.pdf\""
+],
+[
+"allow",
+"Bash",
+"start \"\" \"resumes/current/Alex_Rivera_Resume.pdf\""
+],
+[
+"allow",
+"Bash",
+"start resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"explorer.exe resumes\\\\current"
+],
+[
+"allow",
+"Bash",
+"open resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"xdg-open resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"cmd.exe /c start \"\" \"{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python -c \"from pypdf import PdfReader; print(len(PdfReader('resumes/current/Alex_Rivera_Resume.pdf').pages))\""
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python -c \"import pypdf,sys; print('\\n'.join(p.extract_text() or '' for p in pypdf.PdfReader(sys.argv[1]).pages))\" resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python -c \"import pypdf,sys; print('\\n'.join(p.extract_text() or '' for p in pypdf.PdfReader(sys.argv[1]).pages))\" linkedin/Profile.pdf"
+],
+[
+"allow",
+"Bash",
+"pdftotext -layout linkedin/Profile.pdf -"
+],
+[
+"allow",
+"Bash",
+"latexdiff resumes/approved/v1_2026-11-10/Resume_v1.tex resumes/base/Resume.tex > resumes/base/build/diff.tex"
+],
+[
+"allow",
+"Bash",
+"pandoc applications/Fernwick_MLEngineerRanking_2026-11-10/cover_letter.md -o applications/Fernwick_MLEngineerRanking_2026-11-10/build/cover_letter.pdf"
+],
+[
+"allow",
+"Bash",
+"magick -density 100 resumes/current/Alex_Rivera_Resume.pdf applications/Fernwick_MLEngineerRanking_2026-11-10/build/approved.png"
+],
+[
+"allow",
+"Bash",
+"tar -czf /tmp/backup.tgz resumes/approved resumes/current"
+],
+[
+"allow",
+"Bash",
+"zip -r /tmp/approved.zip resumes/approved"
+],
+[
+"allow",
+"Bash",
+"strings resumes/current/Alex_Rivera_Resume.pdf | head"
+],
+[
+"allow",
+"Bash",
+"xxd resumes/current/Alex_Rivera_Resume.pdf | head -2"
+],
+[
+"allow",
+"Bash",
+"od -c resumes/current/Alex_Rivera_Resume.pdf | head -2"
+],
+[
+"allow",
+"Bash",
+"pdftk resumes/current/Alex_Rivera_Resume.pdf dump_data"
+],
+[
+"allow",
+"Bash",
+"qpdf --check resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"exiftool resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"mutool info resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"nl resumes/approved/v1_2026-11-10/Resume_v1.tex | head"
+],
+[
+"allow",
+"Bash",
+"tac resumes/approved/v1_2026-11-10/NOTES.md"
+],
+[
+"allow",
+"Bash",
+"bat resumes/approved/v1_2026-11-10/NOTES.md"
+],
+[
+"allow",
+"Bash",
+"sed -n '1,40p' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"allow",
+"Bash",
+"awk 'NR<20' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"allow",
+"Bash",
+"git diff --no-index resumes/approved/v1_2026-11-10/Resume_v1.tex resumes/base/Resume.tex"
+],
+[
+"allow",
+"Bash",
+"git hash-object resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"git log -1 --format=%cd -- resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"Bash",
+"git blame resumes/approved/v1_2026-11-10/NOTES.md"
+],
+[
+"allow",
+"Bash",
+"mkdir -p applications/leads interview/notes linkedin resumes/base resumes/approved resumes/current resumes/draft"
+],
+[
+"block",
+"Bash",
+"touch applications/leads/.gitkeep interview/notes/.gitkeep linkedin/.gitkeep resumes/base/.gitkeep resumes/approved/.gitkeep resumes/current/.gitkeep resumes/draft/.gitkeep"
+],
+[
+"block",
+"Bash",
+"for d in applications/leads interview/notes linkedin resumes/base resumes/approved resumes/current resumes/draft; do mkdir -p \"$d\" && touch \"$d/.gitkeep\"; done"
+],
+[
+"allow",
+"Bash",
+"mkdir -p resumes/approved"
+],
+[
+"block",
+"Bash",
+"touch resumes/current/.gitkeep"
+],
+[
+"block",
+"Write",
+"resumes/approved/.gitkeep"
+],
+[
+"block",
+"Write",
+"resumes/current/.gitkeep"
+],
+[
+"allow",
+"Write",
+"resumes/draft/.gitkeep"
+],
+[
+"allow",
+"Write",
+"{WSW}\\resumes\\base\\Resume.tex"
+],
+[
+"allow",
+"Edit",
+"{WSW}\\applications\\Fernwick_MLEngineerRanking_2026-11-10\\Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"Write",
+"{WSW}\\resumes\\draft\\README.md"
+],
+[
+"allow",
+"PowerShell",
+"New-Item -ItemType Directory -Force -Path resumes\\approved, resumes\\current, resumes\\draft | Out-Null"
+],
+[
+"block",
+"PowerShell",
+"New-Item -ItemType File -Force -Path resumes\\approved\\.gitkeep | Out-Null"
+],
+[
+"allow",
+"Bash",
+"py -3 -m venv .venv"
+],
+[
+"allow",
+"Bash",
+".venv/Scripts/python -m pip install -r {PLUGIN}/requirements.txt"
+],
+[
+"allow",
+"Bash",
+"claude plugin marketplace add blader/humanizer"
+],
+[
+"allow",
+"Bash",
+"cp -R {PLUGIN}/templates/workspace/. ."
+],
+[
+"allow",
+"Bash",
+"cp {PLUGIN}/examples/persona/jhs.yaml jhs.yaml"
+],
+[
+"allow",
+"Bash",
+"grep -rn '{{' CLAUDE.md HANDOFF.md applications docs interview"
+],
+[
+"allow",
+"PowerShell",
+"& .venv\\Scripts\\python.exe {PLUGINW}\\tools\\build_resume.py resumes\\base\\Resume.tex"
+],
+[
+"allow",
+"PowerShell",
+"& \"{WSW}\\.venv\\Scripts\\python.exe\" \"{PLUGINW}\\tools\\ats_check.py\" \"{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"allow",
+"PowerShell",
+"& .venv\\Scripts\\python.exe {PLUGINW}\\tools\\resume_lint.py resumes\\base\\Resume.tex resumes\\base\\build\\Resume.pdf --links"
+],
+[
+"allow",
+"PowerShell",
+"& .venv\\Scripts\\python.exe {PLUGINW}\\tools\\approve_resume.py \"First version\" \"88/100 READY\""
+],
+[
+"allow",
+"PowerShell",
+"git tag -l \"resume-approved-v*\" --sort=-v:refname"
+],
+[
+"allow",
+"PowerShell",
+"$tag = git tag -l \"resume-approved-v*\" --sort=-v:refname | Select-Object -First 1; git show \"${tag}:resumes/base/Resume.tex\" | Set-Content -Encoding utf8 applications\\Fernwick_MLEngineerRanking_2026-11-10\\Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"PowerShell",
+"git show resume-approved-v1:resumes/base/Resume.tex | Out-File -Encoding utf8 applications\\Fernwick_MLEngineerRanking_2026-11-10\\Fernwick_MLEngineerRanking_2026-11-10.tex"
+],
+[
+"allow",
+"PowerShell",
+"Get-ChildItem resumes\\current, resumes\\approved -Recurse"
+],
+[
+"allow",
+"PowerShell",
+"Get-ChildItem -Recurse resumes\\approved | Select-Object FullName, Length"
+],
+[
+"allow",
+"PowerShell",
+"Get-Content resumes\\current\\README.md"
+],
+[
+"allow",
+"PowerShell",
+"Test-Path resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"(Get-Item resumes\\current\\Alex_Rivera_Resume.pdf).Length"
+],
+[
+"allow",
+"PowerShell",
+"Get-FileHash resumes\\current\\Alex_Rivera_Resume.pdf, resumes\\approved\\v1_2026-11-10\\Alex_Rivera_Resume_v1.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Copy-Item resumes\\current\\Alex_Rivera_Resume.pdf applications\\Fernwick_MLEngineerRanking_2026-11-10\\build\\"
+],
+[
+"allow",
+"PowerShell",
+"Copy-Item -Path resumes\\current\\Alex_Rivera_Resume.pdf -Destination applications\\Fernwick_MLEngineerRanking_2026-11-10\\build\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Copy-Item -Destination applications\\Fernwick_MLEngineerRanking_2026-11-10\\build\\ -Path resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Start-Process resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Invoke-Item resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"ii resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"start resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"explorer resumes\\current"
+],
+[
+"allow",
+"PowerShell",
+"pdftotext -layout -enc UTF-8 resumes\\current\\Alex_Rivera_Resume.pdf -"
+],
+[
+"allow",
+"PowerShell",
+"pdfinfo resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"pdftoppm -r 70 -png -singlefile resumes\\current\\Alex_Rivera_Resume.pdf applications\\Fernwick_MLEngineerRanking_2026-11-10\\build\\approved"
+],
+[
+"allow",
+"PowerShell",
+"Compare-Object (Get-Content resumes\\approved\\v1_2026-11-10\\Resume_v1.tex) (Get-Content resumes\\base\\Resume.tex)"
+],
+[
+"allow",
+"PowerShell",
+"Select-String -Path resumes\\approved\\v1_2026-11-10\\Resume_v1.tex -Pattern 'Fernwick'"
+],
+[
+"allow",
+"PowerShell",
+"Resolve-Path resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Get-ItemProperty resumes\\current\\Alex_Rivera_Resume.pdf | Select-Object LastWriteTime"
+],
+[
+"allow",
+"PowerShell",
+"Measure-Object -Line -InputObject (Get-Content resumes\\approved\\v1_2026-11-10\\NOTES.md)"
+],
+[
+"allow",
+"PowerShell",
+"Get-Content resumes\\approved\\v1_2026-11-10\\NOTES.md | Measure-Object -Line"
+],
+[
+"allow",
+"PowerShell",
+"Format-Hex resumes\\current\\Alex_Rivera_Resume.pdf | Select-Object -First 2"
+],
+[
+"allow",
+"PowerShell",
+"Join-Path (Get-Location) resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"Split-Path -Leaf resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"allow",
+"PowerShell",
+"[System.IO.File]::Exists('resumes\\current\\Alex_Rivera_Resume.pdf')"
+],
+[
+"allow",
+"PowerShell",
+"Write-Output \"PDF: $PWD\\resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"rm {WSB}/resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"echo x > {WSB}/resumes/current/x.txt"
+],
+[
+"block",
+"Bash",
+"echo x >> {WSC}/resumes/current/x.txt"
+],
+[
+"block",
+"Bash",
+"cp new.pdf {WSB}/resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"rm '\\\\?\\{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf'"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item \\\\?\\{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item '\\\\?\\{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf'"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item \"\\\\?\\{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"PowerShell",
+"Remove-Item \\\\.\\{WSW}\\resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"PowerShell",
+"Set-Content -Path \"\\\\?\\{WSW}\\resumes\\current\\x.txt\" -Value x"
+],
+[
+"block",
+"Bash",
+"timeout 60 git push origin main"
+],
+[
+"block",
+"Bash",
+"timeout -k 5 60 git push"
+],
+[
+"block",
+"Bash",
+"timeout --signal=KILL 1m git push"
+],
+[
+"block",
+"Bash",
+"winpty git push"
+],
+[
+"block",
+"Bash",
+"nice -n 10 git push"
+],
+[
+"block",
+"Bash",
+"nice -10 git push"
+],
+[
+"block",
+"Bash",
+"stdbuf -oL -eL git push origin main"
+],
+[
+"block",
+"Bash",
+"env GIT_TERMINAL_PROMPT=0 git push"
+],
+[
+"block",
+"Bash",
+"env -i git push"
+],
+[
+"block",
+"Bash",
+"echo origin | xargs git push"
+],
+[
+"block",
+"Bash",
+"xargs -I{} git push {} main"
+],
+[
+"block",
+"Bash",
+"sudo -u root git push"
+],
+[
+"block",
+"Bash",
+"nohup git push &"
+],
+[
+"block",
+"Bash",
+"command git push"
+],
+[
+"block",
+"Bash",
+"exec git push"
+],
+[
+"block",
+"Bash",
+"time git push"
+],
+[
+"block",
+"Bash",
+"ionice -c 3 git push"
+],
+[
+"block",
+"Bash",
+"timeout 30 rm resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"winpty rm resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"stdbuf -o0 sed -i 's/a/b/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"ls resumes/current/*.pdf | xargs rm"
+],
+[
+"block",
+"Bash",
+"find resumes/current -name '*.pdf' -print0 | xargs -0 rm -f"
+],
+[
+"block",
+"Bash",
+"powershell -Command Remove-Item resumes\\\\current\\\\Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"powershell -Command \"Remove-Item resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"powershell -NoProfile -Command git push origin main"
+],
+[
+"block",
+"Bash",
+"pwsh -c \"git push\""
+],
+[
+"block",
+"Bash",
+"powershell -EncodedCommand <<ENC:git push origin main>>"
+],
+[
+"block",
+"Bash",
+"powershell -e <<ENC:Remove-Item resumes/current/Alex_Rivera_Resume.pdf>>"
+],
+[
+"block",
+"Bash",
+"powershell -ec <<ENC:git push>>"
+],
+[
+"block",
+"PowerShell",
+"iex \"Remove-Item resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"PowerShell",
+"Invoke-Expression 'git push origin main'"
+],
+[
+"block",
+"PowerShell",
+"Start-Process git -ArgumentList push,origin,main"
+],
+[
+"block",
+"PowerShell",
+"Start-Process -FilePath git -ArgumentList 'push origin main' -Wait"
+],
+[
+"block",
+"PowerShell",
+"Start-Process cmd -ArgumentList '/c del resumes\\current\\Alex_Rivera_Resume.pdf'"
+],
+[
+"block",
+"Bash",
+"cmd /c start git push"
+],
+[
+"block",
+"Bash",
+"git subtree push --prefix=docs origin backup"
+],
+[
+"block",
+"Bash",
+"gh repo create my-search --private --source=. --push"
+],
+[
+"block",
+"Bash",
+"gh repo create my-search --private --source=. --push=true"
+],
+[
+"block",
+"Bash",
+"git send-pack origin main"
+],
+[
+"block",
+"Bash",
+"git -C . push"
+],
+[
+"block",
+"Bash",
+"git -c http.sslVerify=false push"
+],
+[
+"block",
+"Bash",
+"cd applications && git push"
+],
+[
+"block",
+"Bash",
+"bash -c 'git push'"
+],
+[
+"block",
+"Bash",
+"bash -lc \"git push origin main\""
+],
+[
+"block",
+"Bash",
+"eval git push"
+],
+[
+"block",
+"Bash",
+"echo $(git push)"
+],
+[
+"block",
+"Bash",
+"x=`git push`"
+],
+[
+"block",
+"Bash",
+"sed -i 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"sed -Ei 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"sed -i.bak 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"sed --in-place 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"sed -e 's/Lyon/Paris/' -i resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"perl -pi -e 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"perl -i.bak -pe 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"perl -0pi -e 's/Lyon/Paris/' resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Bash",
+"awk -i inplace '{print}' resumes/approved/v1_2026-11-10/NOTES.md"
+],
+[
+"block",
+"Bash",
+"find resumes/current -type f -delete"
+],
+[
+"block",
+"Bash",
+"find resumes -name '*.pdf' -delete"
+],
+[
+"block",
+"Bash",
+"find . -name '*.pdf' -delete"
+],
+[
+"block",
+"Bash",
+"find resumes/current -type f -exec rm {} \\;"
+],
+[
+"block",
+"Bash",
+"find resumes/approved -name '*.tex' -exec sed -i 's/a/b/' {} +"
+],
+[
+"block",
+"Bash",
+"dd if=/dev/zero of=resumes/current/Alex_Rivera_Resume.pdf bs=1 count=1"
+],
+[
+"block",
+"Bash",
+"latexmk -pdf -outdir=resumes/current resumes/base/Resume.tex"
+],
+[
+"block",
+"Bash",
+"pdflatex -output-directory resumes/current resumes/base/Resume.tex"
+],
+[
+"block",
+"PowerShell",
+"Copy-Item resumes\\base\\build\\Resume.pdf -Destination resumes\\current\\Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"PowerShell",
+"Copy-Item -Destination resumes\\current\\ -Path resumes\\base\\build\\Resume.pdf"
+],
+[
+"block",
+"PowerShell",
+"Copy-Item resumes\\base\\build\\Resume.pdf resumes\\current\\Alex_Rivera_Resume.pdf -Force"
+],
+[
+"block",
+"Bash",
+"git tag -d resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"git tag --delete resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"git tag -f resume-approved-v1 HEAD"
+],
+[
+"block",
+"Bash",
+"git tag -l 'resume-approved-v*' | xargs git tag -d"
+],
+[
+"block",
+"Bash",
+"git tag -l | xargs -n1 git tag -d"
+],
+[
+"block",
+"Bash",
+"git tag -d $(git tag -l 'resume*')"
+],
+[
+"block",
+"Bash",
+"git tag -d `git tag`"
+],
+[
+"block",
+"Bash",
+"git tag resume-approved-v2"
+],
+[
+"block",
+"Bash",
+"git tag -a resume-approved-v2 -m 'by hand'"
+],
+[
+"block",
+"Bash",
+"git update-ref -d refs/tags/resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"git update-ref refs/tags/resume-approved-v1 HEAD"
+],
+[
+"block",
+"Bash",
+"rm .git/refs/tags/resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"cp .git/refs/heads/master .git/refs/tags/resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"vim .git/packed-refs"
+],
+[
+"block",
+"Bash",
+"rm -rf resumes"
+],
+[
+"block",
+"Bash",
+"rm -rf ."
+],
+[
+"block",
+"Bash",
+"rm -rf .."
+],
+[
+"block",
+"Bash",
+"rm -rf ../ws"
+],
+[
+"block",
+"Bash",
+"rm -rf *"
+],
+[
+"block",
+"Bash",
+"rm -rf res*"
+],
+[
+"block",
+"Bash",
+"cd .. && rm -rf ws"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item -Recurse -Force resumes"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item -Recurse -Force ."
+],
+[
+"block",
+"Bash",
+"git reset --hard"
+],
+[
+"block",
+"Bash",
+"git reset --hard HEAD~1"
+],
+[
+"block",
+"Bash",
+"git rm -r resumes/approved"
+],
+[
+"block",
+"Bash",
+"git rm -r ."
+],
+[
+"block",
+"Bash",
+"git mv resumes/current resumes/old"
+],
+[
+"block",
+"Bash",
+"git checkout HEAD~1 -- resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"git restore --source=HEAD~1 resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Write",
+"{WSW}\\resumes\\current\\x.txt"
+],
+[
+"block",
+"Write",
+"{WSB}/resumes/current/x.txt"
+],
+[
+"block",
+"Edit",
+"resumes/approved/v1_2026-11-10/Resume_v1.tex"
+],
+[
+"block",
+"Edit",
+"applications/../resumes/current/README.md"
+],
+[
+"block",
+"Write",
+"\\\\?\\{WSW}\\resumes\\current\\x.txt"
+],
+[
+"block",
+"Bash",
+"echo x | tee resumes/current/x.txt"
+],
+[
+"block",
+"Bash",
+"touch resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"truncate -s 0 resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"mv resumes/base/build/Resume.pdf resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"cp resumes/base/build/Resume.pdf resumes/current/"
+],
+[
+"block",
+"Bash",
+"cp -t resumes/current resumes/base/build/Resume.pdf"
+],
+[
+"block",
+"Bash",
+"cd resumes/current && rm *.pdf"
+],
+[
+"block",
+"Bash",
+"cd resumes && rm -rf current"
+],
+[
+"block",
+"Bash",
+"(cd resumes/current && rm -f Alex_Rivera_Resume.pdf)"
+],
+[
+"block",
+"Bash",
+"pdftotext -layout resumes/current/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"pdftoppm -png resumes/current/Alex_Rivera_Resume.pdf resumes/current/page"
+],
+[
+"block",
+"PowerShell",
+"\"x\" | Out-File resumes\\current\\x.txt"
+],
+[
+"block",
+"PowerShell",
+"\"x\" > resumes\\current\\x.txt"
+],
+[
+"block",
+"PowerShell",
+"Set-Content resumes\\current\\x.txt x"
+],
+[
+"block",
+"PowerShell",
+"Move-Item resumes\\current\\Alex_Rivera_Resume.pdf resumes\\draft\\"
+],
+[
+"block",
+"PowerShell",
+"Rename-Item resumes\\current\\Alex_Rivera_Resume.pdf old.pdf"
+],
+[
+"block",
+"PowerShell",
+"del resumes\\current\\*"
+],
+[
+"block",
+"Bash",
+"rm -rf resumes/{approved,current}"
+],
+[
+"block",
+"Bash",
+"rm -f resumes/{current,draft}/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"Bash",
+"rm -f \"$PWD/resumes/current/Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"echo x > \"$PWD/resumes/current/x.txt\""
+],
+[
+"block",
+"Bash",
+"echo x > \"$(pwd)/resumes/current/x.txt\""
+],
+[
+"block",
+"Bash",
+"cp resumes/base/build/Resume.pdf \"$CLAUDE_PROJECT_DIR/resumes/current/Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"rm \"${PWD}/resumes/current/Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"rm $(ls resumes/current/*.pdf)"
+],
+[
+"block",
+"Bash",
+"rm $(find resumes/current -name '*.pdf')"
+],
+[
+"block",
+"Bash",
+"find resumes/current -type f | while read f; do rm \"$f\"; done"
+],
+[
+"block",
+"Bash",
+"D=resumes/current; rm -f $D/Alex_Rivera_Resume.pdf"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item \"$PWD\\resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"PowerShell",
+"Remove-Item (Resolve-Path resumes\\current\\Alex_Rivera_Resume.pdf)"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item (Join-Path $PWD resumes\\current\\Alex_Rivera_Resume.pdf)"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item -Recurse resumes\\current, resumes\\draft"
+],
+[
+"block",
+"PowerShell",
+"Get-ChildItem resumes\\current -Filter *.pdf | Remove-Item"
+],
+[
+"block",
+"PowerShell",
+"Get-ChildItem resumes\\approved -Recurse | Remove-Item -Recurse -Force"
+],
+[
+"block",
+"PowerShell",
+"gci resumes\\current | ri -Force"
+],
+[
+"block",
+"PowerShell",
+"Get-Item resumes\\current\\Alex_Rivera_Resume.pdf | Move-Item -Destination resumes\\draft\\"
+],
+[
+"block",
+"PowerShell",
+"Get-ChildItem resumes\\current | ForEach-Object { Remove-Item $_.FullName }"
+],
+[
+"block",
+"PowerShell",
+"[System.IO.File]::Delete('resumes\\current\\Alex_Rivera_Resume.pdf')"
+],
+[
+"block",
+"PowerShell",
+"[System.IO.File]::WriteAllText(\"{WSW}\\resumes\\current\\README.md\", 'x')"
+],
+[
+"block",
+"PowerShell",
+"[IO.File]::Copy('resumes\\base\\build\\Resume.pdf', 'resumes\\current\\Alex_Rivera_Resume.pdf', $true)"
+],
+[
+"block",
+"Bash",
+"setsid git push origin main"
+],
+[
+"block",
+"Bash",
+"unbuffer git push"
+],
+[
+"block",
+"Bash",
+"flock /tmp/l git push"
+],
+[
+"block",
+"Bash",
+"watch -n 60 git push"
+],
+[
+"block",
+"Bash",
+"script -qc 'git push' /dev/null"
+],
+[
+"block",
+"Bash",
+"bash -ec 'git push'"
+],
+[
+"block",
+"Bash",
+"bash -xc 'git push'"
+],
+[
+"block",
+"Bash",
+"bash <<< 'git push origin main'"
+],
+[
+"block",
+"Bash",
+"bash <<'EOF'\ngit push origin main\nEOF"
+],
+[
+"block",
+"Bash",
+"echo 'git push' | bash"
+],
+[
+"block",
+"Bash",
+"find . -maxdepth 0 -exec git push \\;"
+],
+[
+"block",
+"Bash",
+"wsl git push"
+],
+[
+"block",
+"Bash",
+"cmd //c \"git push origin main\""
+],
+[
+"block",
+"Bash",
+"cmd //c git push"
+],
+[
+"block",
+"Bash",
+"powershell \"git push origin main\""
+],
+[
+"block",
+"Bash",
+"powershell -NoProfile \"git push origin main\""
+],
+[
+"block",
+"Bash",
+"powershell -enc <<ENC:git push origin main>>"
+],
+[
+"block",
+"Bash",
+"powershell -enco <<ENC:git push origin main>>"
+],
+[
+"block",
+"Bash",
+"powershell -EncodedC <<ENC:git push origin main>>"
+],
+[
+"block",
+"Bash",
+"powershell -comm \"git push\""
+],
+[
+"block",
+"Bash",
+"powershell -Comma \"git push\""
+],
+[
+"block",
+"PowerShell",
+"try { git push origin main } catch { }"
+],
+[
+"block",
+"PowerShell",
+"Start-Job { git push } | Wait-Job"
+],
+[
+"block",
+"PowerShell",
+"Invoke-Command -ScriptBlock { git push }"
+],
+[
+"block",
+"PowerShell",
+"Measure-Command { git push }"
+],
+[
+"block",
+"PowerShell",
+"1..1 | ForEach-Object { git push }"
+],
+[
+"block",
+"PowerShell",
+"& git push"
+],
+[
+"block",
+"PowerShell",
+"& 'C:\\Program Files\\Git\\cmd\\git.exe' push origin main"
+],
+[
+"block",
+"PowerShell",
+"git.exe push"
+],
+[
+"block",
+"PowerShell",
+"Start-Process git 'push origin main'"
+],
+[
+"block",
+"PowerShell",
+"saps git push"
+],
+[
+"block",
+"Bash",
+"git -c alias.pub=push pub origin main"
+],
+[
+"block",
+"Bash",
+"cd /tmp && git --git-dir={WSB}/.git push"
+],
+[
+"block",
+"Bash",
+"git push --mirror https://example.com/x.git"
+],
+[
+"block",
+"Bash",
+"gh repo create my-search --public --source . --push"
+],
+[
+"block",
+"Bash",
+"gh repo create my-search -s . --push --private"
+],
+[
+"block",
+"Bash",
+"git remote add origin https://example.com/x.git && git push -u origin master"
+],
+[
+"block",
+"PowerShell",
+"xcopy resumes\\base\\build\\Resume.pdf resumes\\current\\ /Y"
+],
+[
+"block",
+"PowerShell",
+"robocopy resumes\\base\\build resumes\\current Resume.pdf /IS"
+],
+[
+"block",
+"PowerShell",
+"robocopy resumes\\draft resumes\\current /MIR"
+],
+[
+"block",
+"Bash",
+"cmd /c copy resumes\\\\base\\\\build\\\\Resume.pdf resumes\\\\current\\\\Alex_Rivera_Resume.pdf /Y"
+],
+[
+"block",
+"Bash",
+"cmd //c \"del resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"cmd /c \"del resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"powershell \"Remove-Item resumes\\current\\Alex_Rivera_Resume.pdf\""
+],
+[
+"block",
+"Bash",
+"sort -o resumes/current/README.md resumes/current/README.md"
+],
+[
+"block",
+"Bash",
+"cd resumes/current && latexmk -pdf ../base/Resume.tex"
+],
+[
+"block",
+"Bash",
+"cd resumes/current && curl -sO https://example.com/x.pdf"
+],
+[
+"block",
+"Bash",
+"cd resumes/current && git show HEAD~1:resumes/base/Resume.tex > Resume.tex"
+],
+[
+"block",
+"Bash",
+"cp -tresumes/current resumes/base/build/Resume.pdf"
+],
+[
+"block",
+"Bash",
+"rsync -a --delete resumes/draft/ resumes/current/"
+],
+[
+"block",
+"Bash",
+"rsync --remove-source-files resumes/current/Alex_Rivera_Resume.pdf /tmp/"
+],
+[
+"block",
+"Bash",
+"curl -o resumes/current/Alex_Rivera_Resume.pdf https://example.com/x.pdf"
+],
+[
+"block",
+"Bash",
+"unzip -o x.zip -d resumes/current"
+],
+[
+"block",
+"Bash",
+"tar xf x.tar -C resumes/approved"
+],
+[
+"block",
+"Bash",
+"python -c \"import os; os.remove('resumes/current/Alex_Rivera_Resume.pdf')\""
+],
+[
+"block",
+"Bash",
+"perl -e 'unlink \"resumes/current/Alex_Rivera_Resume.pdf\"'"
+],
+[
+"block",
+"Bash",
+"git checkout HEAD~1 -- resumes"
+],
+[
+"block",
+"Bash",
+"git checkout HEAD~1 -- ."
+],
+[
+"block",
+"Bash",
+"git restore --source=HEAD~2 resumes"
+],
+[
+"block",
+"Bash",
+"git restore --source=HEAD~2 --worktree --staged ."
+],
+[
+"gap",
+"Bash",
+"git revert --no-edit HEAD"
+],
+[
+"block",
+"Bash",
+"git reset --hard HEAD~1 -q"
+],
+[
+"block",
+"Bash",
+"git reset -q --hard"
+],
+[
+"block",
+"Bash",
+"git stash -u && git reset --keep HEAD~1"
+],
+[
+"block",
+"Bash",
+"git clean -fdx resumes/current"
+],
+[
+"block",
+"Write",
+"{WSW}\\RESUMES\\Current\\x.txt"
+],
+[
+"block",
+"Bash",
+"git rev-parse HEAD > .git/refs/tags/resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"echo 0000000000000000000000000000000000000000 > .git/refs/tags/resume-approved-v2"
+],
+[
+"block",
+"Bash",
+"sed -i '/resume-approved-v1/d' .git/packed-refs"
+],
+[
+"block",
+"Bash",
+"perl -ni -e 'print unless /resume-approved/' .git/packed-refs"
+],
+[
+"block",
+"Bash",
+"find .git/refs/tags -name 'resume-approved-v*' -delete"
+],
+[
+"block",
+"Bash",
+"find .git -name 'resume-approved-v*' -exec rm {} +"
+],
+[
+"block",
+"Bash",
+"rm -rf .git/refs/tags"
+],
+[
+"block",
+"Bash",
+"rm -rf .git"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item -Recurse -Force .git\\refs\\tags"
+],
+[
+"block",
+"PowerShell",
+"Remove-Item -Recurse -Force .git"
+],
+[
+"block",
+"Bash",
+"git for-each-ref --format='delete %(refname)' refs/tags | git update-ref --stdin"
+],
+[
+"block",
+"Bash",
+"git tag -d \"resume-approved-v1\""
+],
+[
+"block",
+"Bash",
+"git tag -m 'by hand' resume-approved-v2"
+],
+[
+"block",
+"Bash",
+"git tag resume-approved-v2 HEAD~1"
+],
+[
+"block",
+"Bash",
+"git -C . tag -d resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"cd applications && git tag -d resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"T=resume-approved-v1; git tag -d $T"
+],
+[
+"block",
+"Bash",
+"git tag -d resume-approved-v1 2>/dev/null; git tag resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"git push origin :refs/tags/resume-approved-v1"
+],
+[
+"block",
+"Bash",
+"git fetch . +refs/heads/master:refs/tags/resume-approved-v1"
+],
+[
+"gap",
+"Bash",
+"git branch -f master HEAD~1"
+],
+[
+"block",
+"PowerShell",
+"git tag -d resume-approved-v1"
+],
+[
+"block",
+"PowerShell",
+"git tag | ForEach-Object { git tag -d $_ }"
+],
+[
+"block",
+"PowerShell",
+"git tag -l | % { git tag -d $_ }"
+]
+]

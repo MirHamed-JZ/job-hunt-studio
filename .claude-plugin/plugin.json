@@ -1,0 +1,20 @@
+{
+  "name": "job-hunt-studio",
+  "version": "0.1.0",
+  "description": "Evidence-first job search for Claude Code: every resume, form answer and message is drawn from a fact ledger you confirm, checked before it goes out, and sent by you. Scoring, tailoring, review gate and tracking, job search on public company boards, outreach drafts you send yourself, interview practice that teaches, and LinkedIn text.",
+  "author": {
+    "name": "Hamed Jafarzadeh Asl",
+    "url": "https://github.com/MirHamed-JZ"
+  },
+  "repository": "https://github.com/MirHamed-JZ/job-hunt-studio",
+  "license": "MIT",
+  "keywords": [
+    "job-search",
+    "resume",
+    "cv",
+    "latex",
+    "interview",
+    "career",
+    "evidence"
+  ]
+}

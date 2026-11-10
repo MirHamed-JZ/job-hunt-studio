@@ -1,0 +1,84 @@
+# Job Hunt Studio settings. Written by /job-hunt-studio:setup; edit freely, or ask Claude to change them.
+# Facts about your work do NOT go here; they go in docs/Evidence_Ledger.md.
+# This file holds settings: who you are on paper, what you look for, and how the tools behave.
+version: 1
+
+setup:
+  done: []                 # setup steps finished; setup resumes from the first missing one
+
+candidate:
+  name: ""                 # as printed on the resume
+  email: ""
+  phone: ""                # leave empty to keep it off the resume and public pages
+  city: ""                 # for example "Lyon, France"
+  linkedin: ""             # full URL
+  github: ""
+  website: ""
+  schools: []              # used by outreach to find alumni, for example ["Example University"]
+  past_employers: []       # used by outreach to find former colleagues
+  work_authorization: ""   # for form answers only; never printed (see Ledger [never-print])
+
+target:
+  titles: []               # job titles to search for and keep, for example ["Data Scientist", "Analytics Engineer"]
+  exclude_titles: []       # titles to drop, for example ["Manager", "Intern"]
+  seniority:
+    levels: [mid]          # any of: intern, junior, mid, senior, staff
+    max_years_required: 5  # drop postings that ask for more years than this
+
+pack: none                 # interview and keyword pack, for example "ml-research"; "none" uses general questions
+
+search:
+  # Where you want to work, best first. find-jobs puts a posting in the first tier it matches:
+  #   location_regex  place names separated by |, capitals ignored, matched against the posting's location,
+  #                   whatever the work type (on site, hybrid or remote)
+  #   remote_ok       true: a remote posting also matches when its location names one of remote_regions
+  #                   (any remote posting when remote_regions is empty)
+  tiers:
+    - name: "1 home city"
+      location_regex: ""   # for example "lyon|villeurbanne"
+      remote_ok: false
+    - name: "2 remote"
+      location_regex: ""
+      remote_ok: true
+      remote_regions: []   # regions a remote role must accept, for example ["France", "EU", "Europe"]
+  watchlist: []            # companies whose public job boards are scanned; add with /job-hunt-studio:find-jobs add <company>
+                           # each item: {company: "Acme", ats: greenhouse|lever|ashby, slug: "acme"}
+  max_age_days: 30         # postings older than this are dropped (company boards: 180, since a listed posting is open)
+  min_score: 3             # leads under this keyword score are listed separately; tune it, then find-jobs reuse
+  extra_keywords: {}       # optional tuning, pattern: points, for example {"recommend": 2, "sales": -3}
+  jobspy:
+    enabled: false         # LinkedIn and Indeed search through the third-party JobSpy library.
+                           # LinkedIn's User Agreement (section 8.2) forbids scraping; turning this on is your choice.
+    sites: []              # any of: linkedin, indeed
+    searches: []           # each item: {location: "Lyon, France", country: "France", remote: false, tier: 1}
+    queries: []            # search words; empty uses target.titles
+    results_per_search: 20
+    hours_old: 336         # two weeks
+
+resume:
+  template: ""             # chosen at setup from the plugin's templates/resume/
+  base_tex: resumes/base/Resume.tex
+  output_name: ""          # file name employers receive, for example "Alex_Rivera_Resume.pdf"
+  pages: 1
+  tag_prefix: resume-approved-v
+
+review:
+  ready_threshold: 85      # review score out of 100 at which a resume counts as READY
+
+writing:
+  humanizer: false         # true when the humanizer skill is installed; written text then gets a humanizer pass
+  banned_punctuation: [em-dash, en-dash, double-hyphen]   # in prose; date ranges on the resume are exempt
+  banned_phrases: []       # your own list, added to the built-in stock phrases
+
+applications:
+  followup_days: 7
+
+outreach:
+  default_location: ""     # where to look for people when you name only companies
+  connections_csv: applications/outreach/private/Connections.csv   # your own LinkedIn connections export (optional)
+  connections: unset       # unset, added or skipped; set by /job-hunt-studio:outreach setup
+  topics: []               # short word stems for ranking paper authors by how close their work is to yours,
+                           # for example ["rank", "retriev", "recommend", "evaluat"]; set by outreach setup
+  search_roles: []         # roles for the web searches; empty uses your first two target titles plus
+                           # "engineering manager", "team lead" and "recruiter"
+  aliases: {}              # other names a company goes by, for example {"Acme Corporation": ["Acme", "Acme Labs"]}

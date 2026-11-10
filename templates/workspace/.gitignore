@@ -1,0 +1,19 @@
+# This workspace is private. These are kept out of git even here.
+.venv/
+__pycache__/
+build/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+applications/leads/raw/
+applications/outreach/raw/
+applications/outreach/private/
+.claude/settings.local.json
+CLAUDE.local.md
+resumes/draft/*.pdf
+applications/*/posting_raw.txt
+applications/*/posting_hidden.txt
+*.stackdump
